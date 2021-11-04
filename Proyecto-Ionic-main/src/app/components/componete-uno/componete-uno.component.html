@@ -1,0 +1,40 @@
+
+
+<ion-content>
+  <div class="centrar">
+    <ion-labeL>Bienvenido:  {{dato}}</ion-labeL>  
+  </div>
+  <div class="pad">
+    <H4>Ingresa los datos para tu distino.</H4>
+  </div>
+  
+   <ion-card >  
+    <ion-item>
+    <ion-label position="floating">Ingresa tu punto de origen</ion-label>
+    <ion-input type="text" [(ngModel)]="ori" ></ion-input>
+    <ion-label position="floating">Ingresa tu destino</ion-label>
+    <ion-input type="text" [(ngModel)]="dest" ></ion-input>  
+    <ion-item class="ion-padding-horizontal">
+      <ion-select placeholder="Selecione un Vehiculo">
+        <ion-select-option *ngFor="let v of vehiculos" [value]="v.id">{{v.vehiculo}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <img  #MyRef src="assets/img/Mapa2.jpg"/>
+  </ion-item>
+  
+  <ion-button expand="full" (click)="startLoad()" >
+    Te Llevo
+    <ion-icon name="reload" slot="end" #loadingIcon></ion-icon>
+  </ion-button>
+  
+  <ion-button expand="block" (click)="volver()">cerrar sesion</ion-button>
+  </ion-card>
+  
+  
+  
+  
+  
+  
+  
+  </ion-content>
+  

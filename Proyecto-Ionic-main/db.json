@@ -1,0 +1,53 @@
+{
+  "name": "Conductores",
+  "regions": [
+    {
+      "name": "Sebastian Quezada",
+      "rut": "17565238-3",
+      "abbreviation": "SQ",
+      "licencia": "B",
+      "vehiculo": [
+        { "Modelo": "Kia rio 2016" },
+        { "Patente": "kdmw-56"},        
+        { "Color": "Rojo"}
+      ]
+    },
+    {
+      "name": "Martin Vera",
+      "rut": "19345678-6",
+      "abbreviation": "MV",
+      "licencia": "B",
+      "vehiculo": [
+        { "Modelo": "Chevrolet Sail 2015" },
+        { "Patente": "mvcd-69"},        
+        { "Color": "Gris"}
+      ]
+      
+    },
+    {
+      "name": "Victor Labbe",
+      "rut": "16664977-3",
+      "abbreviation": "Vl",
+      "licencia": "B",
+      "vehiculo": [
+        { "Modelo": "Suzuli alto 2019" },
+        { "Patente": "bxcf-76"},        
+        { "Color": "baig"}
+      ]
+    },
+    {
+      "name": "Juan Silva",
+      "rut": "8989238-6",
+      "abbreviation": "JS",
+      "licencia": "B",
+      "vehiculo": [
+        { "Modelo": "Toyota corolla 2020" },
+        { "Patente": "jdls-60"},        
+        { "Color": "Negro"}
+      ]
+    }
+  
+    
+    
+  ]
+}

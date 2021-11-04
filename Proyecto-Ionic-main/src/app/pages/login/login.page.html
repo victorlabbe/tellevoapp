@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="container">
+      <div class="tla">
+        <img src="assets/img/bienvenidos.PNG" alt="">
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="body">
+
+  
+    <ion-item> 
+      <div class="saludo">
+        <img src="assets/img/tla.PNG"/>
+      </div>
+      
+      <div clas="auto">
+        <img src="assets/img/auto1.PNG"/>
+      </div>
+      <ion-label position="floating">Ingresa Usuario</ion-label>
+      <ion-input type="text" [(ngModel)]="dato" required></ion-input>
+      <ion-label position="floating">Ingresa Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="pass" required></ion-input>  
+    </ion-item>
+    <ion-button expand="block" (click)="siguiente()">Ingresar</ion-button>
+
+
+    <div class="ion-text-center">
+      <ion-router-link class="rest" (click)="restablecer()">Restablecer Contraseña</ion-router-link >
+    </div>
+    
+
+</ion-content>

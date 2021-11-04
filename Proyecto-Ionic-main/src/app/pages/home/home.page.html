@@ -1,0 +1,21 @@
+  <ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="container">
+     
+        <img src="assets/img/tla.PNG" alt="">
+        <ion-segment (ionChange)="segmentChanged($event)">
+          <ion-segment-button value="uno">
+            <ion-icon name="car-sport-outline"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="dos">
+            <ion-icon name="speedometer-outline"></ion-icon>
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-router-outlet></ion-router-outlet>
+</ion-content>
