@@ -1,6 +1,9 @@
 <ion-content>
   <ion-card class="ion-text-center">
     <h4>Informacion Conductor</h4>
+    <ion-select placeholder="Selecione un Conductor" [(ngModel)]="user">
+      <ion-select-option *ngFor="let c of users" [value]="c">{{c.user}}</ion-select-option>
+    </ion-select>
     <ion-item class="ion-padding-horizontal">
       <ion-label position="floating">Nombre:</ion-label>
     </ion-item>
@@ -17,9 +20,7 @@
     <ion-item class="ion-padding-horizontal">
       <ion-label position="floating">Patente:</ion-label>
     </ion-item>
-    <ion-item class="ion-padding-horizontal">
-      <ion-label position="floating">Color:</ion-label>
-    </ion-item>
+
 
   </ion-card>
 

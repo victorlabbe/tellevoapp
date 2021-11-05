@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { AnimationController } from '@ionic/angular';
+import { AlertController, AnimationController } from '@ionic/angular';
 import { ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute  } from '@angular/router';
+import { MapService } from 'src/app/service/map.service';
 
 
 
@@ -16,7 +17,7 @@ import { ActivatedRoute  } from '@angular/router';
 export class ComponeteUnoComponent implements OnInit {
   
   //Declaro unas variables
-  dato:any;  //variable de cualquer tipo
+  datos:any;  //variable de cualquer tipo
   pass:any;
   dest:any;
   ori:any;
@@ -24,9 +25,11 @@ export class ComponeteUnoComponent implements OnInit {
   //Haciendo referencia al elemento HTML
   @ViewChild('loadingIcon', { read: ElementRef }) loadingIcon: ElementRef;
 
-  constructor(private activateroute: ActivatedRoute,
+  constructor( public alertController:AlertController,
+               private activateroute: ActivatedRoute,
                private router: Router, 
-               private animationCtrl: AnimationController) {
+               private animationCtrl: AnimationController,
+               private map: MapService) {
 
    //aqui llamo a los datos que obtuve de la navegacion anterior
    this.activateroute.queryParams.subscribe( params =>{
@@ -41,13 +44,25 @@ export class ComponeteUnoComponent implements OnInit {
 
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+    this.map.initMap();
+    this.map.printCurrentPosition();
+  }
+
   vehiculos: any[]=[
     {id: 1, vehiculo:"Chevrolet SAil 2015"},
     {id: 2, vehiculo:"Toyota corolla 2020"},
     {id: 3, vehiculo:"Suzuki alto 2019"},
     {id: 4, vehiculo:"Kio rio 4 2016"}
   ]
+   dato ={
+    ori:"",
+    dest:"",
+    vehiculo:""
+
+  };
+
   //Animacion de ionic/angular
    startLoad () {
     const loadingAnimation = this.animationCtrl.create('loading-animation')
@@ -64,6 +79,16 @@ export class ComponeteUnoComponent implements OnInit {
       this.siguiente();
     }, 3000);
     
+    
+  }
+ 
+
+  //limpiar los componente de la page
+  limpiar(){
+    //recorrer todas las entradas de un objeto entries obteniendo su clave y valor
+    for(var [key, value] of Object.entries(this.dato) ){
+      Object.defineProperty(this.dato,key,{value:""})
+    }
   }
 
 
@@ -76,7 +101,18 @@ export class ComponeteUnoComponent implements OnInit {
     };
     this.router.navigate(['/ruta'], nav )
   }
+  async presentAlert(titulo:string,message:string) {
+    const alert = await this.alertController.create({
 
+      header: titulo,
+      message: message,
+      buttons: ['OK']
+
+    });
+
+    await alert.present();
+
+  }
  
 
 }

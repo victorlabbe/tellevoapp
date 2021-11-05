@@ -15,7 +15,11 @@ export class LoginPage implements OnInit {
 
   dato:string;
   pass:string;
-
+  
+  usuario = {
+    email:"",
+    password:""
+  }
 
   constructor( private router:Router) { }
 

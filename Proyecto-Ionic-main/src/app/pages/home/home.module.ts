@@ -7,6 +7,7 @@ import {MatSliderModule} from '@angular/material/slider';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { ComponeteUnoComponent } from 'src/app/components/componete-uno/componete-uno.component';
+import { ComponeteDosComponent } from 'src/app/components/componete-dos/componete-dos.component';
 
 
 @NgModule({
@@ -17,6 +18,6 @@ import { ComponeteUnoComponent } from 'src/app/components/componete-uno/componet
     HomePageRoutingModule,
     MatSliderModule
   ],
-  declarations: [HomePage, ComponeteUnoComponent]
+  declarations: [HomePage, ComponeteUnoComponent, ComponeteDosComponent]
 })
 export class HomePageModule {}

@@ -12,6 +12,13 @@ export class RutaPage implements OnInit {
   ori:any;
   dest:any;
 
+  dato: any={
+    ori:"",
+    dest:"",
+    vehiculo:""
+
+  };
+
   constructor(private activateroute: ActivatedRoute, private router: Router, ) { 
         //aqui llamo a los datos que obtuve de la navegacion anterior
         this.activateroute.queryParams.subscribe( params =>{
@@ -25,6 +32,8 @@ export class RutaPage implements OnInit {
 
   ngOnInit() {
   }
+
+ 
   siguiente(){
     this.router.navigate(['/home'] )
   }
