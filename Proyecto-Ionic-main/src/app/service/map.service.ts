@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Geolocation } from '@capacitor/geolocation';
+import { AngularFirestore } from '@angular/fire/compat/firestore'  
 
 declare let google;
 
@@ -7,7 +8,17 @@ declare let google;
   providedIn: 'root',
 })
 export class MapService {
-  constructor() {}
+  constructor(private firestore: AngularFirestore) {}
+
+  async create(collection, dato){
+    try {
+      return await this.firestore.collection(collection).add(dato);
+    }  catch(error){
+      console.log("error en: getAll ",error)
+    }
+      
+           
+   }
 
   async initMap() {
     const map = await new google.maps.Map(document.getElementById('map'), {

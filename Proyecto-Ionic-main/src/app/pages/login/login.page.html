@@ -20,9 +20,9 @@
         <img src="assets/img/auto1.PNG"/>
       </div>
       <ion-label position="floating">Ingresa Usuario</ion-label>
-      <ion-input type="text" [(ngModel)]="dato" required></ion-input>
+      <ion-input type="email" placeholder="Ingrese su  email" [(ngModel)]="usuario.email" ></ion-input>
       <ion-label position="floating">Ingresa Contraseña</ion-label>
-      <ion-input type="password" [(ngModel)]="pass" required></ion-input>  
+      <ion-input type="password" placeholder="Ingrese su Contraseña" [(ngModel)]="usuario.password"></ion-input>  
     </ion-item>
     <ion-button expand="block" (click)="siguiente()">Ingresar</ion-button>
 

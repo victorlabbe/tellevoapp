@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApirestService } from 'src/app/service/apirest.service';
 import { APIVehiculosService } from 'src/app/service/apivehiculos.service';
 
 @Component({
@@ -19,18 +20,18 @@ export class ComponeteDosComponent implements OnInit {
     userId:""
    };
 
-  constructor(private router:Router, private api: APIVehiculosService) { }
+  constructor(private router:Router, private api: ApirestService ) { }
    ngOnInit() {
-     this.getConductores();
+     this.getUsuarios();
    }
    ionViewWillEnter(){
-    this.getConductores();
+    this.getUsuarios();
    }
-  getConductores(){
-    this.api.getUsuarios().subscribe((data)=>{
-      console.log(data)
-      this.users=data;
-    })
+   getUsuarios() {
+    this.api.getUsuarios().subscribe((data) => {
+      console.log(data);
+      this.users = data;
+    });
   }
 
   

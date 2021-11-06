@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fir-store-5434b": {
+      "hosting": {
+        "app": [
+          "fir-store-5434b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fir-store-5434b"
+  }
+}

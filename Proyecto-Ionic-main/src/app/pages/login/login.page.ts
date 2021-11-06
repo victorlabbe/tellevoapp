@@ -22,7 +22,9 @@ export class LoginPage implements OnInit {
   }
 
   constructor( private router:Router) { }
-
+  altaUsuario(){
+    
+  }
   ngOnInit() {
   }
 
